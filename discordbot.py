@@ -37,7 +37,7 @@ async def on_guild_join(guild):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send('pong')
+    await ctx.send('静かにしろ')
 
 
 bot.run(token)
