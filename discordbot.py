@@ -24,7 +24,7 @@ async def on_message(message):
     if message.content == 'ローソン':
         await message.channel.send('行け')
     if message.content == 'からあげクン':
-        aawait message channel.send('食え')
+        await message channel.send('食え')
     poops = ['うんこ', 'うんち' , 'ウンコ' , 'ウンチ', '糞']
     for poop in poops:
         if poop in message.content:
@@ -33,7 +33,6 @@ async def on_message(message):
 @bot.event
 async def on_guild_join(guild):
     await after.edit(nick = 'はみるとん')
-
 
 
 @bot.command()
