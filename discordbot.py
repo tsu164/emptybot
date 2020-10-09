@@ -38,6 +38,7 @@ async def on_member_join(member):
 
 @bot.event
 async def on_guild_remove(member):
+    text_channel = member.guild.text_channels[0]
     await text_channel.send(f"{member.name}さんが消えていきました")
 
 @bot.command()
