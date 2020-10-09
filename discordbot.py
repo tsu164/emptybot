@@ -4,7 +4,7 @@ import traceback
 import random
 
 # Embed形式
-import discord
+# import discord
 
 bot = commands.Bot(command_prefix='$')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -90,11 +90,11 @@ async def tumami(ctx):
         tumami_list = [s.strip() for s in f.readlines()]
     await ctx.send(random.choice(tumami_list))
 
-@bot.command()
-async def help(ctx):
-    embed = discord.Embed()
-    embed.description = "empty_botについて"
-    embed.add_field(name="コマンド", value="alchol, drink, food, konbini, misosoup, shop, tumami")
-    await ctx.send(embed=embed)
+# @bot.command()
+# async def help(ctx):
+#     embed = discord.Embed()
+#     embed.description = "empty_botについて"
+#     embed.add_field(name="コマンド", value="alchol, drink, food, konbini, misosoup, shop, tumami")
+#     await ctx.send(embed=embed)
 
 bot.run(token)
