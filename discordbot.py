@@ -6,7 +6,6 @@ import random
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-
 @bot.event
 async def on_ready():
     print('on_ready')
@@ -26,7 +25,7 @@ async def on_message(message):
         await message.channel.send('行け')
     if message.content == 'からあげクン':
         await message.channel.send('食え')
-    poops = ['うんこ' , 'うんち' , 'ウンコ' , 'ウンチ' , '糞']
+    poops = ['うんこ', 'うんち', 'ウンコ', 'ウンチ', '糞']
     for poop in poops:
         if poop in message.content:
             await message.add_reaction('💩')
@@ -35,7 +34,7 @@ async def on_message(message):
 
 @bot.event
 async def on_member_join(member):
-    await edit(nick='はみるとん')
+    await member.edit(nick='はみるとん')
 async def on_guild_remove(member):
     await member.send(f"{member.name}さんが消えていきました")
 
