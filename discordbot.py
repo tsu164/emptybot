@@ -16,6 +16,7 @@ class HelpCommand(commands.DefaultHelpCommand):
         self.command_attrs["shop"] = "ごはんやさんガチャ"
         self.command_attrs["tumami"] = "つまみガチャ"
 
+
 bot = commands.Bot(command_prefix='$', help_command=HelpCommand())
 token = os.environ['DISCORD_BOT_TOKEN']
 
