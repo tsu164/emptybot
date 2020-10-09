@@ -6,7 +6,6 @@ import random
 # Embed形式
 import discord
 
-bot = commands.Bot(command_prefix='$', help_command=HelpCommand())
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @bot.event
@@ -103,4 +102,5 @@ class HelpCommand(commands.DefaultHelpCommand):
         self.command_attrs["shop"] = "ごはんやさんガチャ"
         self.command_attrs["tumami"] = "つまみガチャ"
 
+bot = commands.Bot(command_prefix='$', help_command=HelpCommand())
 bot.run(token)
