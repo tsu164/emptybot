@@ -19,27 +19,25 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_message(message):
-    #bot相手なら無視
+    # bot相手なら無視
     if message.author == bot.user:
         return
     if message.content == 'ローソン':
         await message.channel.send('行け')
     if message.content == 'からあげクン':
         await message.channel.send('食え')
-    poops = ['うんこ', 'うんち' , 'ウンコ' , 'ウンチ', '糞']
+    poops = ['うんこ' , 'うんち' , 'ウンコ' , 'ウンチ' , '糞']
     for poop in poops:
         if poop in message.content:
             await message.add_reaction('💩')
-            
+
     await bot.process_commands(message)
 
 @bot.event
 async def on_member_join(member):
-    await after.edit(nick = 'はみるとん')
+    await edit(nick='はみるとん')
 async def on_guild_remove(member):
-    await message.channel.send(f"{message.author.name}さんが消えていきました")
-    
-
+    await member.send(f"{member.name}さんが消えていきました")
 
 @bot.command()
 async def ping(ctx):
@@ -48,5 +46,5 @@ async def alchol(ctx):
     with open("list/alchol.txt") as f:
         alchol_list = [s.strip() for s in f.readlines()]
     await ctx.send(random.choice(alchol_list))
-        
+
 bot.run(token)
