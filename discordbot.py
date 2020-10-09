@@ -51,4 +51,40 @@ async def alchol(ctx):
         alchol_list = [s.strip() for s in f.readlines()]
     await ctx.send(random.choice(alchol_list))
 
+@bot.command()
+async def drink(ctx):
+    with open("list/drink.txt") as f:
+        drink_list = [s.strip() for s in f.readlines()]
+    await ctx.send(random.choice(drink_list))
+
+@bot.command()
+async def food(ctx):
+    with open("list/food.txt") as f:
+        food_list = [s.strip() for s in f.readlines()]
+    await ctx.send(random.choice(food_list))
+
+@bot.command()
+async def konbini(ctx):
+    with open("list/konbini.txt") as f:
+        konbini_list = [s.strip() for s in f.readlines()]
+    await ctx.send(random.choice(konbini_list))
+
+@bot.command()
+async def misosoup(ctx):
+    with open("list/misosoup.txt") as f:
+        misosoup_list = [s.strip() for s in f.readlines()]
+    await ctx.send(random.choice(misosoup_list))
+
+@bot.command()
+async def shop(ctx):
+    with open("list/shop.txt") as f:
+        shop_list = [s.strip() for s in f.readlines()]
+    await ctx.send(random.choice(shop_list))
+
+@bot.command()
+async def tumami(ctx):
+    with open("list/tumami.txt") as f:
+        tumami_list = [s.strip() for s in f.readlines()]
+    await ctx.send(random.choice(tumami_list))
+
 bot.run(token)
