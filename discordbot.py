@@ -3,9 +3,20 @@ import os
 import traceback
 import random
 
-# Embed形式
-import discord
+# また今度やる
+class HelpCommand(commands.DefaultHelpCommand):
+    def __init__(self):
+        super().__init__()
+        self.commands_heading = "ガチャ"
+        self.command_attrs["alchol"] = "酒ガチャ"
+        self.command_attrs["drink"] = "飲み物ガチャ"
+        self.command_attrs["food"] = "ごはんガチャ"
+        self.command_attrs["konbini"] = "コンビニガチャ "
+        self.command_attrs["misosoup"] = "味噌汁の具ガチャ"
+        self.command_attrs["shop"] = "ごはんやさんガチャ"
+        self.command_attrs["tumami"] = "つまみガチャ"
 
+bot = commands.Bot(command_prefix='$', help_command=HelpCommand())
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @bot.event
@@ -89,18 +100,4 @@ async def tumami(ctx):
         tumami_list = [s.strip() for s in f.readlines()]
     await ctx.send(random.choice(tumami_list))
 
-# また今度やる
-class HelpCommand(commands.DefaultHelpCommand):
-    def __init__(self):
-        super().__init__()
-        self.commands_heading = "ガチャ"
-        self.command_attrs["alchol"] = "酒ガチャ"
-        self.command_attrs["drink"] = "飲み物ガチャ"
-        self.command_attrs["food"] = "ごはんガチャ"
-        self.command_attrs["konbini"] = "コンビニガチャ "
-        self.command_attrs["misosoup"] = "味噌汁の具ガチャ"
-        self.command_attrs["shop"] = "ごはんやさんガチャ"
-        self.command_attrs["tumami"] = "つまみガチャ"
-
-bot = commands.Bot(command_prefix='$', help_command=HelpCommand())
 bot.run(token)
