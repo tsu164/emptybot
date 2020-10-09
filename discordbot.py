@@ -35,12 +35,16 @@ async def on_message(message):
 @bot.event
 async def on_member_join(member):
     await member.edit(nick='はみるとん')
+
+@bot.event
 async def on_guild_remove(member):
-    await member.send(f"{member.name}さんが消えていきました")
+    await text_channel.send(f"{member.name}さんが消えていきました")
 
 @bot.command()
 async def ping(ctx):
     await ctx.send('静かにしろ')
+
+@bot.command()
 async def alchol(ctx):
     with open("list/alchol.txt") as f:
         alchol_list = [s.strip() for s in f.readlines()]
