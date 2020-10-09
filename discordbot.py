@@ -92,7 +92,7 @@ async def tumami(ctx):
 # また今度やる
 class HelpCommand(commands.DefaultHelpCommand):
     def __init__(self):
-        super()__init__()
+        super().__init__()
         self.commands_heading = "ガチャ"
         self.command_attrs["alchol"] = "酒ガチャ"
         self.command_attrs["drink"] = "飲み物ガチャ"
