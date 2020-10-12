@@ -8,7 +8,7 @@ class GachaSystem(commands.Cog):
     @commands.command()
     async def gacha(self, ctx, category, count=1):
         """ガチャができます"""
-        with open(f"emptybot/list/{category}.txt") as f:
+        with open(f"app/list/{category}.txt") as f:
             category_contents = [s.strip() for s in f.readlines()]
         if count == 0 or count > 10:
             return await ctx.send("ムチャ言うな")
