@@ -1,7 +1,7 @@
 from discord.ext import commands
 import random
 
-class Gacha(commands.Cog):
+class Choice(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -23,4 +23,4 @@ class Gacha(commands.Cog):
             await ctx.send("そんなガチャないよ")
 
 def setup(bot):
-    bot.add_cog(Gacha(bot))
+    bot.add_cog(Choice(bot))
