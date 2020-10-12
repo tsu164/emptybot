@@ -21,4 +21,3 @@ class Gacha(commands.Cog):
 
 def setup(bot):
     bot.add_cog(Gacha(bot))
-    
