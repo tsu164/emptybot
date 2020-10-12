@@ -7,7 +7,9 @@ class GachaSystem(commands.Cog):
 
     @commands.command()
     async def gacha(self, ctx, category, count=1):
-        """ガチャができます"""
+        """ガチャができます
+        alcohol, drink, food, konbini, misosoup, shop, sweets, tsumami
+        数字でいくつか指定できます"""
         with open(f"/app/list/{category}.txt") as f:
             category_contents = [s.strip() for s in f.readlines()]
         if count == 0 or count > 10:
