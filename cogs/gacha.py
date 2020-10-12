@@ -21,6 +21,8 @@ class GachaSystem(commands.Cog):
     async def gacha_error(self, ctx, error):
         if isinstance(error, commands.errors.BadArgument):
             await ctx.send("数字で言って！")
+        if isinstance(error, commands.errors.MissingRequiredArgument):
+            await ctx.send("なんのガチャ？")
 
 def setup(bot):
     bot.add_cog(GachaSystem(bot))
