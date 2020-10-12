@@ -6,12 +6,10 @@ class Gacha(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def gacha(self, ctx, category, count: int):
+    async def gacha(self, ctx, category, count=1):
         """ガチャができます"""
         with open(f"../list/{category}.txt") as f:
             category_contents = [s.strip() for s in f.readlines()]
-        if count == None:
-            count = 1
         if count == 0 or count > 10:
             return await ctx.send("ムチャ言うな")
         for i in range(count):
