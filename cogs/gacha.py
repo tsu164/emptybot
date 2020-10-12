@@ -1,7 +1,5 @@
 from discord.ext import commands
-import discord
-import asyncio
-import os
+import random
 
 class Gacha(commands.Cog):
     def __init__(self, bot):
@@ -23,3 +21,4 @@ class Gacha(commands.Cog):
 
 def setup(bot):
     bot.add_cog(Gacha(bot))
+    
