@@ -1,7 +1,7 @@
 from discord.ext import commands
 import random
 
-class Choice(commands.Cog):
+class GachaSystem(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -16,11 +16,11 @@ class Choice(commands.Cog):
             await ctx.send(random.choice(category_contents))
 
     @gacha.error
-    async def gacha(self, ctx, error):
+    async def gacha_error(self, ctx, error):
         if isinstance(error, commands.errors.BadArgument):
             await ctx.send("数字で言って！")
         if isinstance(error, commands.errors.MissingRequiredArgument):
             await ctx.send("そんなガチャないよ")
 
 def setup(bot):
-    bot.add_cog(Choice(bot))
+    bot.add_cog(GachaSystem(bot))
