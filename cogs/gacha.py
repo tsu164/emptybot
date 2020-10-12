@@ -7,8 +7,13 @@ class Gacha(commands.Cog):
 
     @commands.command()
     async def gacha(self, ctx, category, count: int):
+        """ガチャができます"""
         with open(f"../list/{category}.txt") as f:
             category_contents = [s.strip() for s in f.readlines()]
+        if count == None:
+            count = 1
+        if count == 0 or count > 10:
+            return await ctx.send("ムチャ言うな")
         for i in range(count):
             await ctx.send(random.choice(category_contents))
 

@@ -6,10 +6,6 @@ bot = commands.Bot(command_prefix='$')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @bot.event
-async def on_ready():
-    print('on_ready')
-
-@bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
@@ -41,5 +37,4 @@ async def on_guild_remove(member):
     await text_channel.send(f"{member.name}さんが消えていきました")
 
 bot.load_extension("cogs.gacha")
-
 bot.run(token)
