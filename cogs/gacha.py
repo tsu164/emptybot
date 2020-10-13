@@ -15,13 +15,12 @@ class GachaSystem(commands.Cog):
         try:
             with open(f"/app/list/{category}.txt") as f:
                 category_contents = [s.strip() for s in f.readlines()]
-        if count == 0 or count > 10:
-            return await ctx.send("ムチャ言うな")
-        await ctx.send(" ".join(random.sample(category_contents, count)))
+            if count == 0 or count > 10:
+                return await ctx.send("ムチャ言うな")
+            await ctx.send(" ".join(random.sample(category_contents, count)))
 
         except FileNotFoundError:
             return await ctx.send("そんなガチャないよ")
-
 
     @gacha.error
     async def gacha_error(self, ctx, error):
@@ -34,7 +33,7 @@ class GachaSystem(commands.Cog):
     async def dice(self, ctx, num_max, num_min=1):
         """好きな多面体と数字のサイコロふれます"""
         await ctx.send(random.randint(num_min, num_max))
-    
+
     @dice.error
     async def dice_error(self, ctx, error):
         if isinstance(error, commands.errors.BadArgument):
