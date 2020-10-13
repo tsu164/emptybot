@@ -13,10 +13,10 @@ class GachaSystem(commands.Cog):
         alcohol, drink, food, konbini, misosoup, shop, sweets, tsumami
         数字でいくつか指定できます"""
         try:
-            with open(f"/app/list/{category}.txt") as f:
-                category_contents = [s.strip() for s in f.readlines()]
             if count == 0 or count > 10:
                 return await ctx.send("ムチャ言うな")
+            with open(f"/app/list/{category}.txt") as f:
+                category_contents = [s.strip() for s in f.readlines()]
             await ctx.send(" ".join(random.sample(category_contents, count)))
 
         except FileNotFoundError:
@@ -30,7 +30,7 @@ class GachaSystem(commands.Cog):
             await ctx.send("なんのガチャ？")
 
     @commands.command()
-    async def dice(self, ctx, num_max, num_min=1):
+    async def dice(self, ctx, num_max: int, num_min=1):
         """好きな多面体と数字のサイコロふれます"""
         await ctx.send(random.randint(num_min, num_max))
 
