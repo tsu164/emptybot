@@ -36,5 +36,6 @@ async def on_guild_remove(member):
     text_channel = member.guild.text_channels[0]
     await text_channel.send(f"{member.name}さんが消えていきました")
 
+bot.load_extension("cogs.gamble")
 bot.load_extension("cogs.gacha")
 bot.run(token)
