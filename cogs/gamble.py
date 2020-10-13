@@ -8,9 +8,9 @@ class Gamble(commands.Cog):
     @commands.command()
     async def slot(self, ctx, latch=1):
         """スロットを回そう"""
-        if letch > 1000000:
+        if latch > 1000000:
             return await ctx.send("破滅すな")
-        if letch <= 0:
+        if latch <= 0:
             return await ctx.send("ムチャ言うな")
         results = []
         icons = ["🐔", "🐤", "🥚", "🍗", "🍳", "🈚", "💩"]
