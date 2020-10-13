@@ -21,7 +21,7 @@ class GachaSystem(commands.Cog):
 
         except FileNotFoundError:
             return await ctx.send("そんなガチャないよ")
-        
+
 
     @gacha.error
     async def gacha_error(self, ctx, error):
