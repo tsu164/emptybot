@@ -56,7 +56,7 @@ class Gamble(commands.Cog):
         slots = "❓" * 3
         message = await ctx.send(" ".join(slots))
         i = 0
-        while i = 2:
+        while i < 3:
             slots[i] = results[i]
             slot_results = " ".join(slots)
             await message.edit(content=slot_results, delete_after=1)
