@@ -1,7 +1,7 @@
 from discord.ext import commands
 import random
 
-gacha_list = ["alcohol", "drink", "food", "konbini", "misosoup", "shop", "sweets", "tsumami"]
+gacha_list = ["alcohol", "drink", "food", "konbini", "misosoup", "shop", "sweets", "tsumami", "karaage"]
 
 class GachaSystem(commands.Cog):
     def __init__(self, bot):
@@ -10,7 +10,7 @@ class GachaSystem(commands.Cog):
     @commands.command()
     async def gacha(self, ctx, category, count=1):
         """ガチャができます
-        alcohol, drink, food, konbini, misosoup, shop, sweets, tsumami
+        alcohol, drink, food, konbini, misosoup, shop, sweets, tsumami, karaage
         数字でいくつか指定できます"""
         try:
             if count == 0 or count > 10:
