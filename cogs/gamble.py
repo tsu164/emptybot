@@ -1,5 +1,6 @@
 from discord.ext import commands
 import random
+import asyncio
 
 class Gamble(commands.Cog):
     def __init__(self, bot):
@@ -59,7 +60,8 @@ class Gamble(commands.Cog):
         while i < 3:
             slots[i] = results[i]
             slot_results = " ".join(slots)
-            await message.edit(content=slot_results, delete_after=1)
+            await asyncio.sleep(1)
+            await message.edit(content=slot_results)
             i += 1
         await ctx.send(f"{latch}円賭けて、{win}円になりました。")
 
