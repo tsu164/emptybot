@@ -17,31 +17,31 @@ class Gamble(commands.Cog):
         rand = random.randint(1, 1000)
         # 1%🐔
         if rand <= 10:
-            results = icons[0] * 3
+            results = [icons[0]] * 3
             win = 10 * latch
         # 2.5%🐤
         elif rand <= 35:
-            results = icons[1] * 3
+            results = [icons[1]] * 3
             win = 8 * latch
         # 3%🥚
         elif rand <= 65:
-            results = icons[2] * 3
+            results = [icons[2]] * 3
             win = 5 * latch
         # 5%🍗
         elif rand <= 115:
-            results = icons[3] * 3
+            results = [icons[3]] * 3
             win = 2 * latch
         # 8%🍳
         elif rand <= 195:
-            results = icons[4] * 3
+            results = [icons[4]] * 3
             win = 1 * latch
         # 10%🈚
         elif rand <= 295:
-            results = icons[5] * 3
+            results = [icons[5]] * 3
             win = 0
         # 12.5%💩
         elif rand <= 420:
-            results = icons[6] * 3
+            results = [icons[6]] * 3
             win = (-1) * latch
         # スカ
         else:
