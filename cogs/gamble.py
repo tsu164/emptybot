@@ -53,7 +53,7 @@ class Gamble(commands.Cog):
             results.append(random.choice(icons))
             win = 0
         # スロットの表示
-        slots = "❓" * 3
+        slots = ["❓"] * 3
         message = await ctx.send(" ".join(slots))
         i = 0
         while i < 3:
