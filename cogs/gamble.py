@@ -20,28 +20,28 @@ class Gamble(commands.Cog):
         if rand <= 10:
             results = [icons[0]] * 3
             win = 10 * latch
-        # 2.5%🐤
-        elif rand <= 35:
+        # 3%🐤
+        elif rand <= 40:
             results = [icons[1]] * 3
             win = 8 * latch
-        # 3%🥚
-        elif rand <= 65:
+        # 5%🥚
+        elif rand <= 90:
             results = [icons[2]] * 3
             win = 5 * latch
-        # 5%🍗
-        elif rand <= 115:
+        # 10%🍗
+        elif rand <= 190:
             results = [icons[3]] * 3
             win = 2 * latch
-        # 8%🍳
-        elif rand <= 195:
+        # 12.5%🍳
+        elif rand <= 315:
             results = [icons[4]] * 3
             win = 1 * latch
-        # 10%🈚
-        elif rand <= 295:
+        # 15%🈚
+        elif rand <= 465:
             results = [icons[5]] * 3
             win = 0
-        # 12.5%💩
-        elif rand <= 420:
+        # 10%💩
+        elif rand <= 565:
             results = [icons[6]] * 3
             win = (-1) * latch
         # スカ
@@ -63,7 +63,7 @@ class Gamble(commands.Cog):
             await asyncio.sleep(1)
             await message.edit(content=slot_results)
             i += 1
-        await ctx.send(f"{latch}円賭けて、{win}円になりました。")
+        await message.edit(content=f"{slot_results}\n{latch}円賭けて、{win}円になりました。")
 
     @slot.error
     async def slot_error(self, ctx, error):
